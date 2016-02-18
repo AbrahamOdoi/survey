@@ -67,6 +67,8 @@
 			$(document).ready(function() {
 				$.get('http://78.46.254.56/mysurvey/pgLogin.php', function(data, status) {
 					if (status == 'success') {
+						alert('now');
+						alert(data);
 						$("#announce").html(data);
 					} else {
 						alert("Check your internet connectivity");
