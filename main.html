@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Page</title>
+		<meta http-equiv="refresh" content="300">
+		<meta name="viewport" content="initial-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="jquery.mobile-1.3.1.css" />
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+	</head>
+	<body>
+
+		<div data-role="page" id="homepage">
+
+			<div data-role="header" data-position="fixed">
+				<h1>SURVEYS</h1>
+			</div><!-- /header -->
+
+			<div data-role="content" id="mainArea">
+				<ul data-role="listview" data-inset="true">
+					<li data-role="list-divider">
+						Welcome
+					</li>
+					<li>
+						<a href="#announcement">New Surveys</a>
+					</li>
+					<li>
+						<a href="#">Closed Surveys</a>
+					</li>
+				</ul>
+				<div style="margin-bottom: 50px;background: #F8F8F8; padding: 10px; text-align: center;" data-role="popup" id="ttu" class="modalDialog">
+					<!-- <a href="#close" title="Close" class="close" style="position: fixed; right: 10px; padding: 3px; background: silver;">X</a> -->
+					<form>
+						<label style="font-weight: bolder;">Tell Us</label>
+						<textarea id="tellus" name="tellus" rows="60" cols="20"></textarea>
+						<input id="btntellus" type="button" value="SEND" />
+					</form>
+				</div>
+			</div><!-- /content -->
+
+			<div data-role="footer" data-position="fixed"></div>
+
+		</div><!-- /page -->
+
+		<div data-role="page" id="previousmsg">
+
+			<div data-role="header" data-position="fixed">
+				<a href="index.html" rel="external" data-transition='flip' data-role="button" id="back">Back</a>
+				<h1>ARCHIVE</h1>
+			</div><!-- /header -->
+
+			<div data-role="content" id="old">
+
+			</div><!-- /content -->
+
+			<div data-role="footer" data-position="fixed"></div>
+
+		</div><!-- /page3 -->
+
+		<div data-role="page" id="announcement">
+
+			<div data-role="header" data-position="fixed">
+				<a href="index.html" rel="external" data-transition='flip' data-role="button" id="back">Back</a>
+				<h1>NOTICE</h1>
+			</div><!-- /header -->
+
+			<div data-role="content" id="announce">
+				sdfssd
+			</div><!-- /content -->
+
+			<div data-role="footer" data-position="fixed"></div>
+
+		</div><!-- /page5 -->
+
+		<script>
+			$.get('http://78.46.254.56/mysurvey/pgLogin.php', function(data, status) {
+				if (status == 'success') {
+					$("#announce").html(data);
+				} else {
+					alert("Check your internet connectivity");
+				};
+			});
+
+		</script>
+	</body>
+</html>
