@@ -56,7 +56,7 @@
 			</div><!-- /header -->
 
 			<div data-role="content" id="announce">
-				
+
 			</div><!-- /content -->
 
 			<div data-role="footer" data-position="fixed"></div>
@@ -64,12 +64,14 @@
 		</div><!-- /page5 -->
 
 		<script>
-			$.get('http://78.46.254.56/mysurvey/pgLogin.php', function(data, status) {
-				if (status == 'success') {
-					$("#announce").html(data);
-				} else {
-					alert("Check your internet connectivity");
-				};
+			$(document).ready(function() {
+				$.get('http://78.46.254.56/mysurvey/pgLogin.php', function(data, status) {
+					if (status == 'success') {
+						$("#announce").html(data);
+					} else {
+						alert("Check your internet connectivity");
+					};
+				});
 			});
 
 		</script>
